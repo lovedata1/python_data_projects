@@ -1,0 +1,20 @@
+SELECT hex(User.name || Course.title || Member.role ) AS X FROM 
+    User JOIN Member JOIN Course 
+    ON User.id = Member.user_id AND Member.course_id = Course.id
+    ORDER BY X
+    
+    
+output::
+4161646974736933363330
+4161696D61736931313030
+41616D6E61736933333430
+4162696761656C736933333430
+416275736933363330
+etc....
+
+Result: 283 rows returned in 33ms
+At line 1:
+SELECT hex(User.name || Course.title || Member.role ) AS X FROM 
+    User JOIN Member JOIN Course 
+    ON User.id = Member.user_id AND Member.course_id = Course.id
+    ORDER BY X
